@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dynamodb-t1
+    version: v1
+  name: dynamodb-t1
+  namespace: default
+spec:
+  ports:
+    - port: 80
+      name: http
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: dynamodb-t1
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dynamodb-t1-sa

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: dynamodb-t1-server
+  # profiles:
+  #   active:
+  #   - "@profileActive@"
+  cloud:
+    config:
+      uri:
+      - http://configcenter/
+      fail-fast: true
+      retry:
+        max-attempts: 7
